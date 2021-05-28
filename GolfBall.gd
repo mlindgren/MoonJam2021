@@ -53,3 +53,4 @@ func _process(delta):
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
 	hide()
+	$HoleFinishedPopup.popup()
