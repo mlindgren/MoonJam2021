@@ -1,10 +1,37 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/stupidball.png" type="Texture" id=2]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+export (int) var speed = 200
+
+var target = Vector2()
+var velocity = Vector2()
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func _input(event):
+	if event.is_action_pressed(\"click\"):
+		target = get_global_mouse_position()
+		
+func _physics_process(delta):
+	velocity = position.direction_to(target) * speed
+	if position.distance_to(target) > 5:
+		velocity = move_and_slide(velocity)
+"
+
 [node name="KinematicGolfBall" type="KinematicBody2D"]
-script = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 287.428, 261.025 )
