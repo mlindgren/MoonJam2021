@@ -14,8 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_GolfHole_body_entered(body):
-	print("GOLF HOLE ENTERED")
-	body.sleeping = true

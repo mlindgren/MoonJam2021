@@ -31,3 +31,5 @@ current = true
 
 [node name="GolfHole" parent="." instance=ExtResource( 3 )]
 position = Vector2( 292.997, -130.814 )
+
+[connection signal="body_entered" from="GolfHole" to="GolfBall" method="_on_GolfHole_body_entered"]

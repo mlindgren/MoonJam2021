@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+signal hit
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -28,7 +28,7 @@ func _process(delta):
 			Charging = false
 			ShotPowerLine.points[1] = Vector2()
 			
-			self.apply_central_impulse(chargeVector)
+			self.apply_central_impulse(chargeVector*-1)
 			
 		 #var distance = CollisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
 		
@@ -45,3 +45,8 @@ func _process(delta):
 #		print("Input event at ", event.position)
 #		ShotPowerLine.points[1] = event.position
 #		ShotPowerLine.update()
+
+
+func _on_GolfHole_body_entered(body):
+	print("HOLE ENTERED LOL")
+	hide()
