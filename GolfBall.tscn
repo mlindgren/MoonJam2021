@@ -9,7 +9,7 @@ bounce = 0.5
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 17.0005
+radius = 5.08358
 
 [node name="GolfBall" type="RigidBody2D"]
 position = Vector2( 0, 0.667419 )

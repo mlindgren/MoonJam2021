@@ -30,6 +30,6 @@ position = Vector2( -2.82849, 9.89948 )
 current = true
 
 [node name="GolfHole" parent="." instance=ExtResource( 3 )]
-position = Vector2( 292.997, -130.814 )
+position = Vector2( 352.458, -1.19069 )
 
 [connection signal="body_entered" from="GolfHole" to="GolfBall" method="_on_GolfHole_body_entered"]
