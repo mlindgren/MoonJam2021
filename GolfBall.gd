@@ -7,7 +7,8 @@ extends RigidBody2D
 onready var ShotPowerLine = $ShotPowerLine
 onready var CollisionShapeBall = $CollisionShapeBall
 
-var charging: bool = false
+var Charging: bool = false
+var InitialClickPos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,14 @@ func _ready():
 
 func _process(delta):
 	#if charging:
-	ShotPowerLine.points[1] = self.to_local(get_viewport().get_mouse_position())
+	if !Charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+		Charging = true
+		InitialClickPos = get_viewport().get_mouse_position()
+	
+	if Charging:
+		var chargeVector = InitialClickPos - get_viewport().get_mouse_position()
+	
+		ShotPowerLine.points[1] = chargeVector * -1
 		 #var distance = CollisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
 		
 		
