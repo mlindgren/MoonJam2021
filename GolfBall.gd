@@ -22,8 +22,14 @@ func _process(delta):
 	
 	if Charging:
 		var chargeVector = InitialClickPos - get_viewport().get_mouse_position()
-	
-		ShotPowerLine.points[1] = chargeVector * -1
+		ShotPowerLine.points[1] = chargeVector
+		
+		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+			Charging = false
+			ShotPowerLine.points[1] = Vector2()
+			
+			self.apply_central_impulse(chargeVector)
+			
 		 #var distance = CollisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
 		
 		
