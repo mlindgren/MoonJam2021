@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="HoleFinishedPopup" type="PopupDialog"]
+margin_left = -151.02
+margin_top = -224.642
+margin_right = 154.98
+margin_bottom = -128.642
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 111.118
+margin_top = 38.0976
+margin_right = 192.118
+margin_bottom = 52.0976
+text = "Hole complete!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
