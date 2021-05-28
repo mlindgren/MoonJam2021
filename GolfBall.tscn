@@ -14,6 +14,7 @@ radius = 17.0005
 [node name="GolfBall" type="RigidBody2D"]
 position = Vector2( 0, 0.667419 )
 input_pickable = true
+mode = 2
 physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
 script = ExtResource( 2 )
