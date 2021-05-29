@@ -9,6 +9,7 @@ const MIN_VELOCITY : float = 15.0
 
 var _charging: bool = false
 var _ballHit: bool = false
+var _ballInMotion: bool = false
 var _initialClickPos: Vector2
 
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +17,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(_delta):
-	# Only allowed to hit the ball once, 1 HP lol
-	# if !_ballHit:
+	# Do nothing if ball is in motion
+	if _ballInMotion:
+		return
+	
+
 	if !_charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 		_charging = true
 		_initialClickPos = get_viewport().get_mouse_position()
@@ -35,10 +39,20 @@ func _process(_delta):
 	
 	get_viewport().get_viewport()
 			 #var distance = _collisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
+
 		
-#func _physics_process(_delta):
-#	if self.linear_velocity.length() < MIN_VELOCITY:
-#		self.linear_velocity = Vector2()
+func _isBallMoving():
+	return _ballHit && self.linear_velocity.length() > MIN_VELOCITY
+		
+func _physics_process(_delta):
+	print("velocity: " + String(self.linear_velocity.length()))
+	if self._isBallMoving():
+		_ballInMotion = true
+		print("ball moving")
+	else:
+		print("ball still")
+		_ballInMotion = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
