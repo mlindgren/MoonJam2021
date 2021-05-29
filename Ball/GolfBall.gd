@@ -45,15 +45,7 @@ func _isBallMoving():
 	return _ballHit && self.linear_velocity.length() > MIN_VELOCITY
 		
 func _physics_process(_delta):
-	print("velocity: " + String(self.linear_velocity.length()))
-	if self._isBallMoving():
-		_ballInMotion = true
-		print("ball moving")
-	else:
-		print("ball still")
-		_ballInMotion = false
-
-
+	_ballInMotion = self._isBallMoving()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
