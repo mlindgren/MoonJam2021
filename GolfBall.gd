@@ -24,7 +24,7 @@ func _process(_delta):
 	
 	if _charging:
 		var chargeVector = _initialClickPos - get_viewport().get_mouse_position()
-		_shotPowerLine.points[1] = chargeVector
+		_shotPowerLine.points[1] = chargeVector.rotated(self.rotation * -1)
 		
 		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 			_charging = false
@@ -32,7 +32,8 @@ func _process(_delta):
 			
 			self.apply_central_impulse(chargeVector)
 			_ballHit = true
-				
+	
+	get_viewport().get_viewport()
 			 #var distance = _collisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
 		
 #func _physics_process(_delta):
@@ -45,6 +46,7 @@ func _process(_delta):
 
 
 func _on_TextureButton_pressed():
-	Global.currHole += 1
-	print("curr hole: " + String(Global.currHole))
-	get_tree().change_scene("res://Hole" + String(Global.currHole) + ".tscn")
+	# Global.currHole += 1
+	#print("curr hole: " + String(Global.currHole))
+	#get_tree().change_scene("res://Hole" + String(Global.currHole) + ".tscn")
+	print("Yay")
