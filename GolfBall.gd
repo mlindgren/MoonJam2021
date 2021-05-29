@@ -5,7 +5,7 @@ signal hit
 onready var _shotPowerLine = $ShotPowerLine
 onready var _collisionShapeBall = $CollisionShapeBall
 
-const MIN_VELOCITY : float = 1.0
+const MIN_VELOCITY : float = 15.0
 
 var _charging: bool = false
 var _ballHit: bool = false
@@ -17,27 +17,27 @@ func _ready():
 
 func _process(_delta):
 	# Only allowed to hit the ball once, 1 HP lol
-	if !_ballHit:
-		if !_charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
-			_charging = true
-			_initialClickPos = get_viewport().get_mouse_position()
+	# if !_ballHit:
+	if !_charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+		_charging = true
+		_initialClickPos = get_viewport().get_mouse_position()
+	
+	if _charging:
+		var chargeVector = _initialClickPos - get_viewport().get_mouse_position()
+		_shotPowerLine.points[1] = chargeVector
 		
-		if _charging:
-			var chargeVector = _initialClickPos - get_viewport().get_mouse_position()
-			_shotPowerLine.points[1] = chargeVector
+		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+			_charging = false
+			_shotPowerLine.points[1] = Vector2()
 			
-			if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
-				_charging = false
-				_shotPowerLine.points[1] = Vector2()
-				
-				self.apply_central_impulse(chargeVector*-1)
-				_ballHit = true
+			self.apply_central_impulse(chargeVector)
+			_ballHit = true
 				
 			 #var distance = _collisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
 		
-func _physics_process(_delta):
-	if self.linear_velocity.length() < MIN_VELOCITY:
-		self.linear_velocity = Vector2()
+#func _physics_process(_delta):
+#	if self.linear_velocity.length() < MIN_VELOCITY:
+#		self.linear_velocity = Vector2()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
