@@ -17,6 +17,7 @@ func _ready():
 #	pass
 
 func _on_NextHoleButton_pressed():
+	Global.ballInHole = false
 	if Global.currHole < Global.MAX_HOLE:
 		Global.currHole += 1
 		print("Changing to hole: " + String(Global.currHole))
@@ -26,5 +27,5 @@ func _on_NextHoleButton_pressed():
 
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
-	#_ball.hide()
+	Global.ballInHole = true
 	_popup.popup_centered()

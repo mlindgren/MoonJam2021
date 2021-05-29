@@ -2,6 +2,7 @@ extends Node
 
 const MAX_HOLE = 2
 var currHole = 1
+var ballInHole = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
