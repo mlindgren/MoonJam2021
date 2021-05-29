@@ -4,6 +4,7 @@ signal hit
 # Declare member variables here. Examples:
 onready var _shotPowerLine = $ShotPowerLine
 onready var _collisionShapeBall = $CollisionShapeBall
+onready var _sprite = $Sprite
 
 const MIN_VELOCITY : float = 15.0
 
@@ -46,6 +47,13 @@ func _isBallMoving():
 		
 func _physics_process(_delta):
 	_ballInMotion = self._isBallMoving()
+	
+	# _sprite.material.set_shader_param("Direction", self.linear_velocity.normalized())
+	# _sprite.material.set_shader_param("Speed", self.linear_velocity.length())
+	_sprite.material.set_shader_param(
+		"Position",
+		self.position / _sprite.region_rect.size * -1);
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

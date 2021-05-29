@@ -1,7 +1,18 @@
 extends PopupDialog
 
-var COMPLIMENTS = ["wow nice", "I knew you could put balls in holes", "ez"]
-var INSULTS = ["good job idiot =]", "this wouldn't happen if you stopped playing GTA RP", "git gud loser"]
+const COMPLIMENTS = [
+	"wow nice",
+	"I knew you could put balls in holes",
+	"ez"
+]
+
+const INSULTS = [
+	"good job idiot =]",
+	"this wouldn't happen if you stopped playing GTA RP",
+	"git gud loser",
+	"You golf worse than you drive",
+	"I thought you were a God Gamer?"
+]
 
 func get_random_insult():
 	return INSULTS[randi() % INSULTS.size()]
