@@ -36,6 +36,7 @@ func _process(_delta):
 			
 			self.apply_central_impulse(chargeVector)
 			_ballHit = true
+			Global.hitPoints -= 1
 	
 	get_viewport().get_viewport()
 			 #var distance = _collisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())

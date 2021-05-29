@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/nexthole.png" type="Texture" id=3]
+[ext_resource path="res://fonts/droid-sans/DroidSans.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/hp_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/hp.png" type="Texture" id=6]
 
 [node name="UIScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_right = -755.0
+margin_bottom = -469.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -27,6 +33,39 @@ margin_right = 259.937
 margin_bottom = 163.063
 texture_normal = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPContainer" type="HBoxContainer" parent="CanvasLayer"]
+margin_right = 300.0
+margin_bottom = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/HPContainer"]
+margin_right = 200.0
+margin_bottom = 150.0
+texture = ExtResource( 5 )
+
+[node name="HPLabel" type="TextureRect" parent="CanvasLayer/HPContainer/Background"]
+margin_left = 1.41418
+margin_top = 24.2133
+margin_right = 151.414
+margin_bottom = 174.213
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPCount" type="Label" parent="CanvasLayer/HPContainer/Background"]
+margin_left = 117.532
+margin_top = 46.2427
+margin_right = 208.532
+margin_bottom = 130.243
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

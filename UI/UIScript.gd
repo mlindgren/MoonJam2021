@@ -9,12 +9,12 @@ onready var _camera : Camera2D = $"/root/Course/GolfBall/BallCam"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$CanvasLayer/HPContainer/Background/HPCount.text = String(Global.hitPoints)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	$CanvasLayer/HPContainer/Background/HPCount.text = String(Global.hitPoints)
 
 func _on_NextHoleButton_pressed():
 	Global.ballInHole = false
@@ -28,4 +28,5 @@ func _on_NextHoleButton_pressed():
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
 	Global.ballInHole = true
+	Global.hitPoints += 1
 	_popup.popup_centered()
