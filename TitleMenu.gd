@@ -20,4 +20,4 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Hole1.tscn")
+	get_tree().change_scene("res://Courses/Hole1.tscn")

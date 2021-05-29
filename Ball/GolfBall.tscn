@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/smartball.png" type="Texture" id=1]
-[ext_resource path="res://GolfBall.gd" type="Script" id=2]
+[ext_resource path="res://Ball/GolfBall.gd" type="Script" id=2]
+[ext_resource path="res://Ball/BallCam.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 resource_name = "GolfBallMaterial"
@@ -32,5 +33,6 @@ points = PoolVector2Array( 0, 0, 0, 0 )
 [node name="BallCam" type="Camera2D" parent="."]
 position = Vector2( -2.82849, 9.89948 )
 current = true
+script = ExtResource( 3 )
 
-[connection signal="input_event" from="." to="." method="_on_GolfBall_input_event"]
+[node name="Tween" type="Tween" parent="BallCam"]

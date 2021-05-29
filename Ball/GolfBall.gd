@@ -43,10 +43,3 @@ func _process(_delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_TextureButton_pressed():
-	# Global.currHole += 1
-	#print("curr hole: " + String(Global.currHole))
-	#get_tree().change_scene("res://Hole" + String(Global.currHole) + ".tscn")
-	print("Yay")
