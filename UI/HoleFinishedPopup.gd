@@ -24,9 +24,7 @@ func _ready():
 	pass
 
 func _on_HoleFinishedPopup_about_to_show():
-	print("here?")
 	if Global.ballInHole:
 		$Label.text = get_random_compliment()
 	else:
 		$Label.text = get_random_insult()
-
