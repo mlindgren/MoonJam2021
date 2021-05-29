@@ -19,5 +19,5 @@ func _ready():
 
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
-	_ball.hide()
-	_popup.popup()
+	#_ball.hide()
+	_popup.popup_centered()
