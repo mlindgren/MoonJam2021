@@ -5,7 +5,7 @@ extends Camera2D
 # var a = 2
 # var b = "text"
 
-onready var _ball = get_node("/root/Main/GolfBall")
+onready var _ball = get_node("/root/Hole" + String(Global.currHole) + "/GolfBall")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

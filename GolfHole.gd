@@ -5,8 +5,8 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
-onready var _popup = get_node("/root/Main/HoleFinishedPopup")
-onready var _ball = get_node("/root/Main/GolfBall")
+onready var _popup = get_node("/root/Hole" + String(Global.currHole) + "/HoleFinishedPopup")
+onready var _ball = get_node("/root/Hole" + String(Global.currHole) + "/GolfBall")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
