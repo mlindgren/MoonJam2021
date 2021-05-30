@@ -38,7 +38,7 @@ func _set_zoom_level(value: float) -> void:
 	tween.start()
 
 func _process(delta):
-	if _following_ball:
+	if ball and _following_ball:
 		tween.interpolate_property(
 			self,
 			"position",
@@ -54,7 +54,7 @@ func _unhandled_input(event):
 	var handled : bool = false
 	
 	# Allow the player to drag the camera only if they're not charging up a shot
-	if !ball.charging and \
+	if ball and !ball.charging and \
 		event is InputEventMouseMotion and \
 		(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 		
@@ -78,13 +78,14 @@ func _unhandled_input(event):
 
 func _on_GolfBall_ball_hit():
 	_following_ball = true
-	tween.interpolate_property(
-		self,
-		"position",
-		position,
-		ball.position,
-		tween_follow_duration,
-		Tween.TRANS_SINE,
-		Tween.EASE_OUT)
-	tween.start()
+	if ball:
+		tween.interpolate_property(
+			self,
+			"position",
+			position,
+			ball.position,
+			tween_follow_duration,
+			Tween.TRANS_SINE,
+			Tween.EASE_OUT)
+		tween.start()
 	
