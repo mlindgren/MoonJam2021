@@ -110,3 +110,7 @@ func _on_GolfHole_body_entered(body):
 			"emit_signal",
 			"ball_entered_hole")
 		_tween.start()
+
+
+func _on_GolfBall_ball_died():
+	pass # Replace with function body.
