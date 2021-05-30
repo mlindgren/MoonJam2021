@@ -20,6 +20,7 @@ func _on_NextHoleButton_pressed():
 	Global.ballInHole = false
 	if Global.currHole < Global.MAX_HOLE:
 		Global.currHole += 1
+		Global.hitPoints += 1
 		print("Changing to hole: " + String(Global.currHole))
 		get_tree().change_scene("res://Courses/Hole" + String(Global.currHole) + ".tscn")
 	else:
@@ -28,5 +29,4 @@ func _on_NextHoleButton_pressed():
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
 	Global.ballInHole = true
-	Global.hitPoints += 1
 	_popup.popup_centered()
