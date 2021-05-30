@@ -10,12 +10,12 @@
 [node name="Course" type="Node"]
 
 [node name="SlopeLow" parent="." instance=ExtResource( 4 )]
-position = Vector2( -558.44, -4.26597 )
+position = Vector2( -629.916, 38.6196 )
 scale = Vector2( 5.40187, -0.627945 )
 z_index = 2
 
 [node name="SlopeMed" parent="." instance=ExtResource( 4 )]
-position = Vector2( -554.069, -129.983 )
+position = Vector2( -565.001, -88.7791 )
 scale = Vector2( 5.40187, -0.627945 )
 z_index = 2
 gravity = 147.0
