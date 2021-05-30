@@ -1,31 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/nexthole.png" type="Texture" id=3]
 [ext_resource path="res://assets/MoonmoonEmotes/moon2CUTE.png" type="Texture" id=4]
+[ext_resource path="res://assets/hp_bg.png" type="Texture" id=5]
 [ext_resource path="res://UI/WinnerPopup.tscn" type="PackedScene" id=7]
 
-[node name="UIScene" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.0
-margin_right = -755.0
-margin_bottom = -469.0
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HoleFinishedPopup" parent="CanvasLayer" instance=ExtResource( 2 )]
+[node name="HoleFinishedPopup" parent="." instance=ExtResource( 2 )]
+visible = true
 margin_left = 411.172
 margin_top = 222.885
 margin_right = 717.172
 margin_bottom = 420.885
 
-[node name="NextHoleButton" type="TextureButton" parent="CanvasLayer/HoleFinishedPopup"]
+[node name="NextHoleButton" type="TextureButton" parent="HoleFinishedPopup"]
 margin_left = 44.937
 margin_top = 118.063
 margin_right = 259.937
@@ -36,24 +28,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HPContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HPContainer" type="HBoxContainer" parent="."]
 margin_right = 674.0
 margin_bottom = 112.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HPTexture" type="TextureRect" parent="CanvasLayer/HPContainer"]
+[node name="HPTexture" type="TextureRect" parent="HPContainer"]
 margin_right = 112.0
 margin_bottom = 112.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 stretch_mode = 2
 
-[node name="WinnerPopup" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
+[node name="WinnerPopup" parent="." instance=ExtResource( 7 )]
 margin_left = 412.343
 margin_top = 454.091
 margin_right = 718.343
 margin_bottom = 550.091
 
-[connection signal="pressed" from="CanvasLayer/HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = 1.12247
+margin_top = -2.24493
+margin_right = 482.122
+margin_bottom = 478.755
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]

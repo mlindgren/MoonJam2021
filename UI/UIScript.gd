@@ -1,11 +1,8 @@
-extends Control
+extends CanvasLayer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-onready var _popup : Popup = $CanvasLayer/HoleFinishedPopup
-onready var _winnerPopup : Popup = $CanvasLayer/WinnerPopup
-onready var _hpTexture : TextureRect = $CanvasLayer/HPContainer/HPTexture
+onready var _popup : Popup = $HoleFinishedPopup
+onready var _winnerPopup : Popup = $WinnerPopup
+onready var _hpTexture : TextureRect = $HPContainer/HPTexture
 
 const HP_IMAGE_WIDTH = 112
 

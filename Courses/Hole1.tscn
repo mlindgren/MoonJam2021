@@ -11,7 +11,6 @@
 [node name="GolfBall" parent="." instance=ExtResource( 1 )]
 position = Vector2( -26.1932, 271.32 )
 z_index = 4096
-gravity_scale = 1.0
 linear_damp = 0.5
 
 [node name="GolfHole" parent="." instance=ExtResource( 3 )]

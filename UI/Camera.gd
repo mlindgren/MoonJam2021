@@ -12,11 +12,13 @@ export var zoom_factor := 0.1
 # Duration of the zoom's tween animation.
 export var zoom_duration := 0.2
 
+export var tween_follow_duration := 0.2
+
 # The camera's target zoom level.
 var _zoom_level := 1.0 setget _set_zoom_level
 
 onready var tween: Tween = $Tween
-onready var ball = $"/root/Course/GolfBall"
+onready var ball: RigidBody2D = $"/root/Course/GolfBall"
 
 func _set_zoom_level(value: float) -> void:
 	# We limit the value between `min_zoom` and `max_zoom`
@@ -29,15 +31,23 @@ func _set_zoom_level(value: float) -> void:
 		zoom,
 		Vector2(_zoom_level, _zoom_level),
 		zoom_duration,
-		tween.TRANS_SINE,
+		Tween.TRANS_SINE,
 		# Easing out means we start fast and slow down as we reach the target value.
-		tween.EASE_OUT
+		Tween.EASE_OUT
 	)
 	tween.start()
 
 func _process(delta):
 	if _following_ball:
-		self.position = ball.position
+		tween.interpolate_property(
+			self,
+			"position",
+			position,
+			ball.position,
+			tween_follow_duration,
+			Tween.TRANS_SINE,
+			Tween.EASE_OUT)
+
 
 func _unhandled_input(event):
 	
@@ -49,6 +59,7 @@ func _unhandled_input(event):
 		(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 		
 		_following_ball = false
+		tween.stop(self, "position")
 		
 		self.position -= event.relative
 		handled = true
@@ -67,3 +78,13 @@ func _unhandled_input(event):
 
 func _on_GolfBall_ball_hit():
 	_following_ball = true
+	tween.interpolate_property(
+		self,
+		"position",
+		position,
+		ball.position,
+		tween_follow_duration,
+		Tween.TRANS_SINE,
+		Tween.EASE_OUT)
+	tween.start()
+	
