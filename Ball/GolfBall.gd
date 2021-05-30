@@ -7,6 +7,8 @@ onready var _collisionShapeBall = $CollisionShapeBall
 onready var _sprite = $Sprite
 
 const MIN_VELOCITY : float = 15.0
+const MAX_CHARGE_VECTOR_LENGTH = 300.0
+const POWER_SCALING_FACTOR : float = 5.0
 
 var _charging: bool = false
 var _ballHit: bool = false
@@ -22,26 +24,23 @@ func _process(_delta):
 	if _ballInMotion:
 		return
 	
-
 	if !_charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 		_charging = true
 		_initialClickPos = get_viewport().get_mouse_position()
 	
 	if _charging:
-		var chargeVector = _initialClickPos - get_viewport().get_mouse_position()
+		var chargeVector =  (_initialClickPos - get_viewport().get_mouse_position()).clamped(
+			MAX_CHARGE_VECTOR_LENGTH)
 		_shotPowerLine.points[1] = chargeVector.rotated(self.rotation * -1)
 		
 		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
 			_charging = false
 			_shotPowerLine.points[1] = Vector2()
 			
-			self.apply_central_impulse(chargeVector)
+			self.apply_central_impulse(chargeVector * POWER_SCALING_FACTOR)
 			_ballHit = true
 			Global.hitPoints -= 1
-	
-	get_viewport().get_viewport()
-			 #var distance = _collisionShapeBall.position.distance_to(get_viewport().get_local_mouse_position())
-
+			
 		
 func _isBallMoving():
 	return _ballHit && self.linear_velocity.length() > MIN_VELOCITY
