@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/moon2CUTE.png-3c3c60ab0363a0fa99262d51851ce863.stex"
+path="res://.import/moon2CUTE.png-042bd34ac2793f3482bfcfd465913d87.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/moon2CUTE.png"
-dest_files=[ "res://.import/moon2CUTE.png-3c3c60ab0363a0fa99262d51851ce863.stex" ]
+source_file="res://assets/MoonmoonEmotes/moon2CUTE.png"
+dest_files=[ "res://.import/moon2CUTE.png-042bd34ac2793f3482bfcfd465913d87.stex" ]
 
 [params]
 
