@@ -39,5 +39,7 @@ tile_data = PoolIntArray( -1114117, 6, 0, -1114116, 10, 0, -1114115, 10, 0, -111
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 5 )]
 
+[connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
 [connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
 [connection signal="body_entered" from="GolfHole" to="UIScene" method="_on_GolfHole_body_entered"]
+[connection signal="body_entered" from="GolfHole" to="GolfBall" method="_on_GolfHole_body_entered"]

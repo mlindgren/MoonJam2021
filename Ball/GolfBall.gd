@@ -96,6 +96,14 @@ func _on_GolfHole_body_entered(body):
 			HOLE_ENTRY_DURATION,
 			Tween.TRANS_LINEAR,
 			Tween.EASE_IN)
+		_tween.interpolate_property(
+			self,
+			"linear_velocity",
+			linear_velocity,
+			Vector2(),
+			HOLE_ENTRY_DURATION,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN)
 		_tween.interpolate_callback(
 			self,
 			HOLE_ENTRY_DURATION,
