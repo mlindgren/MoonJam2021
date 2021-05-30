@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/HoleFinishedPopup.gd" type="Script" id=1]
 
-[node name="HoleFinishedPopup" type="PopupDialog"]
+[node name="WinnerPopup" type="PopupDialog"]
 margin_left = -151.02
 margin_top = -224.642
 margin_right = 154.98
@@ -17,11 +17,9 @@ margin_left = 111.118
 margin_top = 37.4302
 margin_right = 210.118
 margin_bottom = 51.4302
-text = "Hole complete!"
+text = "A winner is you!"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="about_to_show" from="." to="." method="_on_HoleFinishedPopup_about_to_show"]
