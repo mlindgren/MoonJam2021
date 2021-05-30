@@ -49,6 +49,12 @@ zoom_in={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Ball"
+2d_physics/layer_2="Course"
+2d_physics/layer_3="KillBox"
+
 [physics]
 
 common/enable_pause_aware_picking=true

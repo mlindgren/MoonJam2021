@@ -42,6 +42,8 @@ shader_param/mask = ExtResource( 1 )
 position = Vector2( 0, 0.667419 )
 input_pickable = true
 physics_material_override = SubResource( 1 )
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShapeBall" type="CollisionShape2D" parent="."]
@@ -58,4 +60,5 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="ShotPowerLine" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 0 )
 
+[connection signal="body_entered" from="." to="." method="_on_GolfBall_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_GolfBall_input_event"]

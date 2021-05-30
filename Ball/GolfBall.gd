@@ -1,15 +1,16 @@
 extends RigidBody2D
 
 signal ball_hit
+signal ball_died
 
 # Declare member variables here. Examples:
 onready var _shotPowerLine = $ShotPowerLine
-onready var _collisionShapeBall = $CollisionShapeBall
 onready var _sprite = $Sprite
 
 const MIN_VELOCITY : float = 15.0
 const MAX_CHARGE_VECTOR_LENGTH = 300.0
 const POWER_SCALING_FACTOR : float = 5.0
+const KILLBOX_COLLISION_LAYER : int = 4
 
 var charging: bool = false
 
@@ -60,3 +61,8 @@ func _on_GolfBall_input_event(viewport, event, _shape_idx):
 		_initialClickPos = viewport.get_mouse_position()
 		get_tree().set_input_as_handled()
 
+func _on_GolfBall_body_entered(body):
+	print(body, " ", body.collision_layer)
+	if body.collision_layer & KILLBOX_COLLISION_LAYER:
+		get_tree().paused = true
+		emit_signal("ball_died")

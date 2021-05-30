@@ -8,7 +8,7 @@ const COMPLIMENTS = [
 
 const INSULTS = [
 	"good job idiot =]",
-	"Somebody's been spending too much time RPing",
+	"Somebody's been spending too much time playing GTA RP",
 	"git gud loser",
 	"You golf worse than you drive",
 	"I thought you were a God Gamer",
@@ -21,6 +21,7 @@ func get_random_insult():
 
 func get_random_compliment():
 	return COMPLIMENTS[randi() % COMPLIMENTS.size()]
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

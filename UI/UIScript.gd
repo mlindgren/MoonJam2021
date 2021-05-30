@@ -15,6 +15,9 @@ func _process(_delta):
 		_hpTexture.hide()
 
 func _on_NextHoleButton_pressed():
+	# Ensure we're not paused if we were previously
+	get_tree().paused = false
+	
 	Global.ballInHole = false
 	if Global.currHole <= Global.MAX_HOLE:
 		print("Changing to hole: " + String(Global.currHole))
@@ -24,6 +27,8 @@ func _on_NextHoleButton_pressed():
 		print("A winner is you")
 
 func _on_GolfHole_body_entered(body):
+	get_tree().paused = true
+	
 	print("HOLE ENTERED LOL")
 	if Global.currHole < Global.MAX_HOLE && !Global.ballInHole:
 		Global.ballInHole = true
@@ -32,3 +37,6 @@ func _on_GolfHole_body_entered(body):
 		_popup.popup_centered()
 	else:
 		_winnerPopup.popup_centered()
+
+func _on_GolfBall_ball_died():
+	_popup.popup_centered()
