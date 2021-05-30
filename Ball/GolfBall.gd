@@ -2,15 +2,21 @@ extends RigidBody2D
 
 signal ball_hit
 signal ball_died
+signal ball_entered_hole
 
 # Declare member variables here. Examples:
 onready var _shotPowerLine = $ShotPowerLine
 onready var _sprite = $Sprite
+onready var _tween = $Tween
 
 const MIN_VELOCITY : float = 15.0
 const MAX_CHARGE_VECTOR_LENGTH = 300.0
 const POWER_SCALING_FACTOR : float = 5.0
 const KILLBOX_COLLISION_LAYER : int = 4
+
+# Constants for hole entry animation
+const MAX_HOLE_ENTRY_VELOCITY : float = 400.0
+const HOLE_ENTRY_DURATION : float = 0.25
 
 var charging: bool = false
 
@@ -66,3 +72,21 @@ func _on_GolfBall_body_entered(body):
 	if body.collision_layer & KILLBOX_COLLISION_LAYER:
 		get_tree().paused = true
 		emit_signal("ball_died")
+
+func _on_GolfHole_body_entered(body):
+	print("Hole entered at ", self.linear_velocity.length())
+	if self.linear_velocity.length() < MAX_HOLE_ENTRY_VELOCITY:
+		_tween.interpolate_property(
+			self,
+			"scale",
+			self.scale,
+			Vector2(),
+			HOLE_ENTRY_DURATION,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN)
+		_tween.interpolate_callback(
+			self,
+			HOLE_ENTRY_DURATION,
+			"emit_signal",
+			"ball_entered_hole")
+		_tween.start()

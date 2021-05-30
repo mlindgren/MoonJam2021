@@ -60,5 +60,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="ShotPowerLine" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 0 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_GolfBall_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_GolfBall_input_event"]

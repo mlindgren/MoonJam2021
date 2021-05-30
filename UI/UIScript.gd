@@ -26,7 +26,10 @@ func _on_NextHoleButton_pressed():
 	else:
 		print("A winner is you")
 
-func _on_GolfHole_body_entered(body):
+func _on_GolfBall_ball_died():
+	_popup.popup_centered()
+
+func _on_GolfBall_ball_entered_hole():
 	get_tree().paused = true
 	
 	print("HOLE ENTERED LOL")
@@ -37,6 +40,3 @@ func _on_GolfHole_body_entered(body):
 		_popup.popup_centered()
 	else:
 		_winnerPopup.popup_centered()
-
-func _on_GolfBall_ball_died():
-	_popup.popup_centered()
