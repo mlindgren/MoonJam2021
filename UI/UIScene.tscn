@@ -44,12 +44,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HPContainer"]
+[node name="HPTexture" type="TextureRect" parent="CanvasLayer/HPContainer"]
 margin_right = 112.0
 margin_bottom = 112.0
 texture = ExtResource( 4 )
 stretch_mode = 2
 
 [node name="WinnerPopup" parent="CanvasLayer" instance=ExtResource( 7 )]
+margin_left = 412.343
+margin_top = 454.091
+margin_right = 718.343
+margin_bottom = 550.091
 
 [connection signal="pressed" from="CanvasLayer/HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]

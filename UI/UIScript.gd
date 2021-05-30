@@ -5,14 +5,17 @@ extends Control
 # var b = "text"
 onready var _popup : Popup = $CanvasLayer/HoleFinishedPopup
 onready var _winnerPopup : Popup = $CanvasLayer/WinnerPopup
+onready var _hpTexture : TextureRect = $CanvasLayer/HPContainer/HPTexture
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	$CanvasLayer/HPContainer/Background/HPCount.text = String(Global.hitPoints)
+const HP_IMAGE_WIDTH = 112
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	$CanvasLayer/HPContainer/Background/HPCount.text = String(Global.hitPoints)
+func _process(_delta):
+	
+	if Global.hitPoints > 0:
+		_hpTexture.rect_size.x = HP_IMAGE_WIDTH * Global.hitPoints
+	else:
+		# Setting width to 0 doesn't work
+		_hpTexture.hide()
 
 func _on_NextHoleButton_pressed():
 	Global.ballInHole = false

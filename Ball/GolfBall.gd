@@ -47,6 +47,7 @@ func _process(_delta):
 			
 			self.apply_central_impulse(_chargeVector * POWER_SCALING_FACTOR)
 			_ballHit = true
+			Global.hitPoints -= 1
 			emit_signal("ball_hit")
 
 func _on_GolfBall_input_event(viewport, event, _shape_idx):
