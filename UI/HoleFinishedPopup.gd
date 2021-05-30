@@ -25,7 +25,7 @@ func get_random_compliment():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
+	
 func _on_HoleFinishedPopup_about_to_show():
 	if Global.ballInHole:
 		$Label.text = get_random_compliment()

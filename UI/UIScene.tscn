@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/nexthole.png" type="Texture" id=3]
 [ext_resource path="res://assets/MoonmoonEmotes/moon2CUTE.png" type="Texture" id=4]
+[ext_resource path="res://UI/ScoreCount.gd" type="Script" id=5]
 [ext_resource path="res://UI/WinnerPopup.tscn" type="PackedScene" id=7]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -51,5 +52,26 @@ margin_left = 412.343
 margin_top = 454.091
 margin_right = 718.343
 margin_bottom = 550.091
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+margin_left = 931.0
+margin_right = 1021.0
+margin_bottom = 55.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="Label" parent="ScoreContainer"]
+margin_top = 20.0
+margin_right = 43.0
+margin_bottom = 34.0
+text = "Score: "
+
+[node name="ScoreCount" type="Label" parent="ScoreContainer"]
+margin_left = 47.0
+margin_top = 20.0
+margin_right = 47.0
+margin_bottom = 34.0
+script = ExtResource( 5 )
 
 [connection signal="pressed" from="HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]
