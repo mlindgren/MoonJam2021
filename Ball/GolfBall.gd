@@ -15,7 +15,7 @@ const POWER_SCALING_FACTOR : float = 5.0
 const KILLBOX_COLLISION_LAYER : int = 4
 
 # Constants for hole entry animation
-const MAX_HOLE_ENTRY_VELOCITY : float = 400.0
+const MAX_HOLE_ENTRY_VELOCITY : float = 500.0
 const HOLE_ENTRY_DURATION : float = 0.25
 
 var charging: bool = false

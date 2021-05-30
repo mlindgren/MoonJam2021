@@ -3,5 +3,5 @@
 [ext_resource path="res://fonts/droid-sans/DroidSans.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 50
+size = 24
 font_data = ExtResource( 1 )

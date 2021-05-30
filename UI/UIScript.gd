@@ -6,13 +6,13 @@ onready var _hpTexture : TextureRect = $HPContainer/HPTexture
 
 const HP_IMAGE_WIDTH = 112
 
-func _process(_delta):
-	
-	if Global.hitPoints > 0:
-		_hpTexture.rect_size.x = HP_IMAGE_WIDTH * Global.hitPoints
-	else:
-		# Setting width to 0 doesn't work
-		_hpTexture.hide()
+#func _process(_delta):
+#
+#	if Global.hitPoints > 0:
+#		_hpTexture.rect_size.x = HP_IMAGE_WIDTH * Global.hitPoints
+#	else:
+#		# Setting width to 0 doesn't work
+#		_hpTexture.hide()
 
 func _on_NextHoleButton_pressed():
 	# Ensure we're not paused if we were previously
