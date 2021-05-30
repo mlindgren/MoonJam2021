@@ -6,12 +6,10 @@ extends Control
 # var b = "text"
 onready var _popup : Popup = $CanvasLayer/HoleFinishedPopup
 onready var _winnerPopup : Popup = $CanvasLayer/WinnerPopup
-onready var _camera : Camera2D = $"/root/Course/GolfBall/BallCam"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CanvasLayer/HPContainer/Background/HPCount.text = String(Global.hitPoints)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
