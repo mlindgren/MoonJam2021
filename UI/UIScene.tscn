@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/nexthole.png" type="Texture" id=3]
 [ext_resource path="res://assets/MoonmoonEmotes/moon2CUTE.png" type="Texture" id=4]
-[ext_resource path="res://assets/hp_bg.png" type="Texture" id=5]
 [ext_resource path="res://UI/WinnerPopup.tscn" type="PackedScene" id=7]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -52,17 +51,5 @@ margin_left = 412.343
 margin_top = 454.091
 margin_right = 718.343
 margin_bottom = 550.091
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-margin_left = 1.12247
-margin_top = -2.24493
-margin_right = 482.122
-margin_bottom = 478.755
-texture = ExtResource( 5 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]
