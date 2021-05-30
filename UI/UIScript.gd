@@ -27,8 +27,8 @@ func _on_NextHoleButton_pressed():
 
 func _on_GolfHole_body_entered(body):
 	print("HOLE ENTERED LOL")
-	Global.ballInHole = true
-	if Global.currHole < Global.MAX_HOLE:
+	if Global.currHole < Global.MAX_HOLE && !Global.ballInHole:
+		Global.ballInHole = true
 		Global.currHole += 1
 		Global.hitPoints += 1
 		_popup.popup_centered()
