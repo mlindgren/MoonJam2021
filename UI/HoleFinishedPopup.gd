@@ -8,10 +8,12 @@ const COMPLIMENTS = [
 
 const INSULTS = [
 	"good job idiot =]",
-	"this wouldn't happen if you stopped playing GTA RP",
+	"Somebody's been spending too much time RPing",
 	"git gud loser",
 	"You golf worse than you drive",
-	"I thought you were a God Gamer?"
+	"I thought you were a God Gamer",
+	"old shit fat bald",
+	"you suck lole"
 ]
 
 func get_random_insult():

@@ -1,5 +1,6 @@
 extends RigidBody2D
-signal hit
+
+signal ball_hit
 
 # Declare member variables here. Examples:
 onready var _shotPowerLine = $ShotPowerLine
@@ -10,7 +11,9 @@ const MIN_VELOCITY : float = 15.0
 const MAX_CHARGE_VECTOR_LENGTH = 300.0
 const POWER_SCALING_FACTOR : float = 5.0
 
-var _charging: bool = false
+var charging: bool = false
+
+var _chargeVector: Vector2
 var _ballHit: bool = false
 var _ballInMotion: bool = false
 var _initialClickPos: Vector2
@@ -19,29 +22,6 @@ var _initialClickPos: Vector2
 func _ready():
 	pass # Replace with function body.
 
-func _process(_delta):
-	# Do nothing if ball is in motion
-	if _ballInMotion:
-		return
-	
-	if !_charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
-		_charging = true
-		_initialClickPos = get_viewport().get_mouse_position()
-	
-	if _charging:
-		var chargeVector =  (_initialClickPos - get_viewport().get_mouse_position()).clamped(
-			MAX_CHARGE_VECTOR_LENGTH)
-		_shotPowerLine.points[1] = chargeVector.rotated(self.rotation * -1)
-		
-		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
-			_charging = false
-			_shotPowerLine.points[1] = Vector2()
-			
-			self.apply_central_impulse(chargeVector * POWER_SCALING_FACTOR)
-			_ballHit = true
-			Global.hitPoints -= 1
-			
-		
 func _isBallMoving():
 	return _ballHit && self.linear_velocity.length() > MIN_VELOCITY
 		
@@ -55,5 +35,27 @@ func _physics_process(_delta):
 		self.position / _sprite.region_rect.size * -1);
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(_delta):
+	if charging:
+		_chargeVector =  (_initialClickPos - get_viewport().get_mouse_position()).clamped(
+			MAX_CHARGE_VECTOR_LENGTH)
+		_shotPowerLine.points[1] = _chargeVector.rotated(self.rotation * -1)
+		
+		if !(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+			charging = false
+			_shotPowerLine.points[1] = Vector2()
+			
+			self.apply_central_impulse(_chargeVector * POWER_SCALING_FACTOR)
+			_ballHit = true
+			emit_signal("ball_hit")
+
+func _on_GolfBall_input_event(viewport, event, _shape_idx):
+	# Do nothing if ball is in motion
+	if _ballInMotion:
+		return
+	
+	if !charging and (Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+		charging = true
+		_initialClickPos = viewport.get_mouse_position()
+		get_tree().set_input_as_handled()
+

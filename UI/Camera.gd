@@ -1,6 +1,7 @@
 # Smooth camera zoom code from https://www.gdquest.com/tutorial/godot/2d/camera-zoom/
 extends Camera2D
 
+var _following_ball : bool = false
 
 # Lower cap for the `_zoom_level`.
 export var min_zoom := 0.5
@@ -14,8 +15,8 @@ export var zoom_duration := 0.2
 # The camera's target zoom level.
 var _zoom_level := 1.0 setget _set_zoom_level
 
-# We store a reference to the scene's tween node.
 onready var tween: Tween = $Tween
+onready var ball = $"/root/Course/GolfBall"
 
 func _set_zoom_level(value: float) -> void:
 	# We limit the value between `min_zoom` and `max_zoom`
@@ -34,10 +35,35 @@ func _set_zoom_level(value: float) -> void:
 	)
 	tween.start()
 
+func _process(delta):
+	if _following_ball:
+		self.position = ball.position
+
 func _unhandled_input(event):
+	
+	var handled : bool = false
+	
+	# Allow the player to drag the camera only if they're not charging up a shot
+	if !ball.charging and \
+		event is InputEventMouseMotion and \
+		(Input.get_mouse_button_mask() & BUTTON_MASK_LEFT):
+		
+		_following_ball = false
+		
+		self.position -= event.relative
+		handled = true
+	
 	if event.is_action_pressed("zoom_in"):
 		# Inside a given class, we need to either write `self._zoom_level = ...` or explicitly
 		# call the setter function to use it.
 		_set_zoom_level(_zoom_level - zoom_factor)
-	if event.is_action_pressed("zoom_out"):
+		handled = true
+	elif event.is_action_pressed("zoom_out"):
 		_set_zoom_level(_zoom_level + zoom_factor)
+		handled = true
+		
+	if handled:
+		get_tree().set_input_as_handled()
+
+func _on_GolfBall_ball_hit():
+	_following_ball = true

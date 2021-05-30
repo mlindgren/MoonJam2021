@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ball/GolfBall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UIScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://CourseElements/GolfHole.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CourseElements/LinearSlope.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/CameraScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/GolfTileSet.tres" type="TileSet" id=8]
 
 [node name="Course" type="Node"]
@@ -42,4 +43,7 @@ tile_data = PoolIntArray( -524292, 1610612741, 0, -524291, 1610612741, 0, -52429
 
 [node name="UIScene" parent="." instance=ExtResource( 2 )]
 
+[node name="PlayerCamera" parent="." instance=ExtResource( 5 )]
+
+[connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
 [connection signal="body_entered" from="GolfHole" to="UIScene" method="_on_GolfHole_body_entered"]
