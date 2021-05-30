@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_HOLE = 2
+const MAX_HOLE = 3
 var currHole = 1
 var ballInHole = false
 var hitPoints = 1
