@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_HOLE = 17 # needs to be n + 1
+const MAX_HOLE = 19 # needs to be n + 1
 enum GAME_MODE {GOD_GAMER, HARDSTUCK_PLAT}
 var currHole = 1
 var ballInHole = false
