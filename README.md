@@ -1,5 +1,5 @@
 # moon2GOLF
-by team "72 hours of moon2SUFFER"
+by Mitch Lindgren and Evan Greco, aka **72 hours of moon2SUFFER**
 
 Download a pre-built executable on [our Itch.io page](https://mitchl.itch.io/moon2golf).
 
@@ -17,7 +17,7 @@ Created in 72 hours for the third anual [Moonmoon Game Jam](https://jam.moon2.tv
 
 ## Credits
 
-- Created by and copyright team "72 Hours of moon2SUFFER" (Mitch Lindgren and Evan Greco)
+- Created by and copyright Mitch Lindgren and Evan Greco
 - Uses art assets by [Kenney Vleugels](https://kenney.nl/). Licensed under Creative Commons Zero.
 - Uses sound effects by [AGFX](https://freesound.org/people/AGFX/sounds/20428/). Licensed under Creative Commons Attribution 3.0 Unported.
 - Uses sound effects by [170129](https://freesound.org/people/170129/sounds/408260/). Licensed under Creative Commons Zero.
