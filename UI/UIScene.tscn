@@ -102,6 +102,7 @@ margin_left = 412.343
 margin_top = 454.091
 margin_right = 718.343
 margin_bottom = 550.091
+popup_exclusive = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
