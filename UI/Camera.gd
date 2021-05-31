@@ -17,6 +17,10 @@ export var tween_follow_duration := 0.2
 # The camera's target zoom level.
 var _zoom_level := 1.5 setget _set_zoom_level
 
+# Camera boundary
+export var boundary_upper_left := Vector2(-1065, -1328)
+export var boundary_lower_right := Vector2(848, 469)
+
 onready var tween: Tween = $Tween
 onready var ball: RigidBody2D = $"/root/Course/GolfBall"
 
@@ -38,7 +42,7 @@ func _set_zoom_level(value: float) -> void:
 	tween.start()
 
 func _process(delta):
-	if ball and _following_ball:
+	if _following_ball:
 		tween.interpolate_property(
 			self,
 			"position",
@@ -47,7 +51,6 @@ func _process(delta):
 			tween_follow_duration,
 			Tween.TRANS_SINE,
 			Tween.EASE_OUT)
-
 
 func _unhandled_input(event):
 	
@@ -61,7 +64,10 @@ func _unhandled_input(event):
 		_following_ball = false
 		tween.stop(self, "position")
 		
-		self.position -= event.relative
+		position -= event.relative
+		position.x = clamp(position.x, boundary_upper_left.x, boundary_lower_right.x)
+		position.y = clamp(position.y, boundary_upper_left.y, boundary_lower_right.y)
+		
 		handled = true
 	
 	if event.is_action_pressed("zoom_in"):
