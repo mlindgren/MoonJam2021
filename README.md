@@ -1,7 +1,7 @@
 # moon2GOLF
 by Mitch Lindgren and Evan Greco, aka **72 hours of moon2SUFFER**
 
-[!moon2GOLF Title Screen](/assets/titlecard-small.png)
+![moon2GOLF Title Screen](/assets/titlecard-small.png)
 
 Download a pre-built executable on [our Itch.io page](https://mitchl.itch.io/moon2golf).
 
