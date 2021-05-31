@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/nexthole.png" type="Texture" id=3]
 [ext_resource path="res://assets/MoonmoonEmotes/moon2CUTE.png" type="Texture" id=4]
 [ext_resource path="res://UI/ScoreCount.gd" type="Script" id=5]
 [ext_resource path="res://fonts/droid-sans/DroidSans.tres" type="DynamicFont" id=6]
@@ -14,12 +13,13 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="HoleFinishedPopup" parent="." instance=ExtResource( 2 )]
+visible = true
 margin_left = 344.0
 margin_top = 223.0
 margin_right = 844.0
 margin_bottom = 423.0
 
-[node name="NextHoleButton" type="TextureButton" parent="HoleFinishedPopup"]
+[node name="NextHoleButton" type="Button" parent="HoleFinishedPopup"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -30,14 +30,9 @@ margin_right = 75.0
 margin_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "OK"
 
 [node name="HPContainer" type="HBoxContainer" parent="."]
-visible = false
 margin_right = 674.0
 margin_bottom = 112.0
 mouse_filter = 2
