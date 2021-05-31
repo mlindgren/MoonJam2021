@@ -1,6 +1,8 @@
 # moon2GOLF
 by team "72 hours of moon2SUFFER"
 
+Download a pre-built executable on [our Itch.io page](https://mitchl.itch.io/moon2golf).
+
 ## Building
 The game builds with Godot 3.3. In theory, it should work on any platform, but so far it has only been tested on Windows.
 
