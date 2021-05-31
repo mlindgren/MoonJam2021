@@ -43,5 +43,5 @@ tile_data = PoolIntArray( -655356, 33, 0, -655351, 33, 0, -458746, 35, 0, -45874
 [connection signal="ball_died" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_died"]
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
 [connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
-[connection signal="body_entered" from="GolfHole" to="UIScene" method="_on_GolfHole_body_entered"]
 [connection signal="body_entered" from="GolfHole" to="GolfBall" method="_on_GolfHole_body_entered"]
+[connection signal="body_entered" from="GolfHole" to="UIScene" method="_on_GolfHole_body_entered"]
