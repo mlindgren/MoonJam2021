@@ -9,6 +9,8 @@ signal ball_entered_hole
 onready var _shotPowerLine = $ShotPowerLine
 onready var _sprite = $Sprite
 onready var _tween = $Tween
+onready var _puttSound = $PuttSound
+onready var _sinkSound = $SinkSound
 
 const MIN_VELOCITY : float = 30.0
 const MAX_CHARGE_VECTOR_LENGTH = 500.0
@@ -64,6 +66,8 @@ func _process(_delta):
 			charging = false
 			_shotPowerLine.points[1] = Vector2()
 			
+			_puttSound.play()
+			
 			apply_central_impulse(_chargeVector * POWER_SCALING_FACTOR)
 			_ballHit = true
 			Global.score += 1
@@ -88,6 +92,7 @@ func _on_GolfBall_body_entered(body):
 func _on_GolfHole_body_entered(body):
 	print("Hole entered at velocity ", linear_velocity.length())
 	if linear_velocity.length() < MAX_HOLE_ENTRY_VELOCITY:
+		_sinkSound.play()
 		_tween.interpolate_property(
 			self,
 			"scale",

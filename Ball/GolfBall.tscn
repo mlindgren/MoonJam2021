@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ballmask.png" type="Texture" id=1]
 [ext_resource path="res://Ball/GolfBall.gd" type="Script" id=2]
+[ext_resource path="res://assets/Audio/putt.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/1776.png" type="Texture" id=4]
+[ext_resource path="res://assets/Audio/20428__agfx__drop-ball-in-cup-1.wav" type="AudioStream" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 resource_name = "GolfBallMaterial"
@@ -62,6 +64,12 @@ region_rect = Rect2( 0, 0, 64, 64 )
 points = PoolVector2Array( 0, 0, 0, 0 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="PuttSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SinkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_GolfBall_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_GolfBall_input_event"]
