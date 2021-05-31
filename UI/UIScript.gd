@@ -23,8 +23,6 @@ func _on_NextHoleButton_pressed():
 		print("Changing to hole: " + String(Global.currHole))
 		_popup.hide()
 		get_tree().change_scene("res://Courses/Hole" + String(Global.currHole) + ".tscn")
-	else:
-		print("A winner is you")
 
 func _on_GolfBall_ball_died():
 	_popup.popup_centered()

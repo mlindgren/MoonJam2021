@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/hole.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 25.6081
+radius = 20.5461
 
 [node name="GolfHole" type="Area2D"]
 

@@ -2,9 +2,11 @@ extends PopupDialog
 
 const COMPLIMENTS = [
 	"wow nice",
-	"I knew you could put balls in holes",
+	"You're pretty good at handling balls",
 	"ez",
-	"AYAYA"
+	"AYAYA",
+	"you did okay I guess",
+	"Wow, you actually got it in"
 ]
 
 const INSULTS = [

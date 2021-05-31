@@ -72,17 +72,17 @@ __meta__ = {
 }
 
 [node name="ScoreText" type="Label" parent="ScoreContainer"]
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 80.0
-margin_bottom = 42.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 6 )
 text = "Strokes"
 
 [node name="ScoreCount" type="Label" parent="ScoreContainer"]
 margin_left = 84.0
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 84.0
-margin_bottom = 42.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 6 )
 script = ExtResource( 5 )
 
@@ -100,17 +100,17 @@ __meta__ = {
 }
 
 [node name="HoleText" type="Label" parent="HoleContainer"]
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 50.0
-margin_bottom = 42.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 6 )
 text = "Hole"
 
 [node name="HoleCount" type="Label" parent="HoleContainer"]
 margin_left = 54.0
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 54.0
-margin_bottom = 42.0
+margin_bottom = 41.0
 custom_fonts/font = ExtResource( 6 )
 script = ExtResource( 8 )
 

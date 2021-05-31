@@ -1,46 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/UIScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball/GolfBall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/CameraScene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://CourseElements/LinearSlope.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CourseElements/ParallaxScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://CourseElements/GolfHole.tscn" type="PackedScene" id=5]
 [ext_resource path="res://CourseElements/EmptyHole.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/KenneyTiles.tres" type="TileSet" id=7]
+[ext_resource path="res://CourseElements/Spinner.tscn" type="PackedScene" id=8]
 
 [node name="Course" type="Node"]
-
-[node name="SlopeHigh2" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1590.03, -1084.2 )
-rotation = 3.14159
-scale = Vector2( 3.88189, -2.56356 )
-z_index = 2
-gravity_vec = Vector2( 0, -1 )
-gravity = 196.0
-
-[node name="SlopeHigh3" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1501.85, -1367.09 )
-rotation = 3.14159
-scale = Vector2( 4.48194, -1.22677 )
-z_index = 2
-gravity_vec = Vector2( 0, -1 )
-gravity = 196.0
-
-[node name="SlopeHigh4" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1456.72, -1632.41 )
-rotation = 3.14159
-scale = Vector2( 4.48194, -0.826769 )
-z_index = 2
-gravity_vec = Vector2( 0, -1 )
-gravity = 196.0
-
-[node name="SlopeHigh5" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1331.37, -1877.42 )
-rotation = 3.14159
-scale = Vector2( 4.48194, -0.586765 )
-z_index = 2
-gravity_vec = Vector2( 0, -1 )
-gravity = 196.0
 
 [node name="GolfBall" parent="." instance=ExtResource( 2 )]
 position = Vector2( -47.1385, 209.671 )
@@ -48,7 +17,7 @@ z_index = 4096
 linear_damp = 0.5
 
 [node name="GolfHole" parent="." instance=ExtResource( 5 )]
-position = Vector2( -792.831, -762.844 )
+position = Vector2( -850.831, -762.844 )
 z_index = 8
 
 [node name="KillMap" type="TileMap" parent="."]
@@ -56,7 +25,7 @@ z_index = 1
 tile_set = ExtResource( 7 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( -1572866, 0, 0, -1572865, 0, 0, -1507330, 0, 0, -1507329, 0, 0, -851957, 0, 0, -851956, 0, 0, -786421, 0, 0, -786420, 0, 0 )
+tile_data = PoolIntArray( -1638404, 33, 0, -1703935, 33, 0, -1572866, 0, 0, -1572865, 0, 0, -1507330, 0, 0, -1507329, 0, 0, -917519, 32, 0, -983028, 34, 0, -851957, 0, 0, -851956, 0, 0, -786421, 0, 0, -786420, 0, 0, -589839, 32, 0, -655348, 34, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
@@ -67,15 +36,20 @@ tile_data = PoolIntArray( -1703941, 6, 0, -1703940, 10, 0, -1703939, 10, 0, -170
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 3 )]
 
-[node name="Area2D" parent="." instance=ExtResource( 6 )]
+[node name="FakeHoleE" parent="." instance=ExtResource( 6 )]
 position = Vector2( 730.194, -767.429 )
 z_index = 1
-collision_layer = 4
 
-[node name="Area2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -43.489, -1574.37 )
+[node name="FakeHoleN" parent="." instance=ExtResource( 6 )]
+position = Vector2( -62.489, -1574.37 )
 z_index = 1
-collision_layer = 4
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
+
+[node name="Spinner" parent="." instance=ExtResource( 8 )]
+position = Vector2( -62.0983, -774.174 )
+scale = Vector2( 2.56, 1 )
+degrees_per_sec = -5.0
 
 [connection signal="ball_died" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_died"]
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]

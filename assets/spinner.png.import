@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole.png-574f3ced342d3b642e06523304c12dd1.stex"
+path="res://.import/spinner.png-f1256dbeed6ecd00ef2ec29851302c6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hole.png"
-dest_files=[ "res://.import/hole.png-574f3ced342d3b642e06523304c12dd1.stex" ]
+source_file="res://assets/spinner.png"
+dest_files=[ "res://.import/spinner.png-f1256dbeed6ecd00ef2ec29851302c6d.stex" ]
 
 [params]
 

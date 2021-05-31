@@ -2,7 +2,5 @@
 
 [ext_resource path="res://assets/hole.png" type="Texture" id=1]
 
-[node name="EmptyHole" type="Area2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="FakeHole" type="Sprite"]
 texture = ExtResource( 1 )
