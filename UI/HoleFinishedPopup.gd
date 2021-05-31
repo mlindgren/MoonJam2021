@@ -12,9 +12,14 @@ const INSULTS = [
 	"Somebody's been spending too much time playing GTA RP",
 	"git gud loser",
 	"You golf worse than you drive",
-	"I thought you were a God Gamer",
+	"Not even a real God Gamer",
 	"old shit fat bald",
-	"you suck lole"
+	"you suck lole",
+	"If your fake wife could see this she'd be crying",
+	"No wonder you never finished Vypur's game",
+	"Bronze league skills",
+	"Go back to Overwatch",
+	"Don't quit your day job... oh, wait"
 ]
 
 func get_random_insult():

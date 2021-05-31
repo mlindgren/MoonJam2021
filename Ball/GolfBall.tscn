@@ -42,6 +42,7 @@ shader_param/mask = ExtResource( 1 )
 position = Vector2( 0, 0.667419 )
 input_pickable = true
 physics_material_override = SubResource( 1 )
+continuous_cd = 2
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )

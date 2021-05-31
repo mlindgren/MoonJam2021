@@ -15,7 +15,7 @@ export var zoom_duration := 0.2
 export var tween_follow_duration := 0.2
 
 # The camera's target zoom level.
-var _zoom_level := 1.0 setget _set_zoom_level
+var _zoom_level := 1.5 setget _set_zoom_level
 
 onready var tween: Tween = $Tween
 onready var ball: RigidBody2D = $"/root/Course/GolfBall"

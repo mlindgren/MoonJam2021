@@ -5,6 +5,8 @@
 [node name="PlayerCamera" type="Camera2D"]
 position = Vector2( -2.82849, 9.89948 )
 current = true
+zoom = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
+min_zoom = 1.0
 
 [node name="Tween" type="Tween" parent="."]

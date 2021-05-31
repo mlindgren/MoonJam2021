@@ -57,23 +57,26 @@ margin_right = 718.343
 margin_bottom = 550.091
 
 [node name="ScoreContainer" type="HBoxContainer" parent="."]
-margin_left = 931.0
-margin_right = 1021.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
 margin_bottom = 55.0
+grow_horizontal = 0
+grow_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScoreText" type="Label" parent="ScoreContainer"]
 margin_top = 20.0
-margin_right = 43.0
+margin_right = 51.0
 margin_bottom = 34.0
-text = "Score: "
+text = "Strokes:"
 
 [node name="ScoreCount" type="Label" parent="ScoreContainer"]
-margin_left = 47.0
+margin_left = 55.0
 margin_top = 20.0
-margin_right = 47.0
+margin_right = 55.0
 margin_bottom = 34.0
 script = ExtResource( 5 )
 
