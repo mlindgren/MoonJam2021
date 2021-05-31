@@ -1,6 +1,9 @@
 # Import cache
 .import/
 
+# Git API plug-in
+git_api.*
+
 # Binaries
 bin/
 build/
