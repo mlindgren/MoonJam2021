@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/KenneyTiles.tres" type="TileSet" id=5]
 [ext_resource path="res://UI/CameraScene.tscn" type="PackedScene" id=6]
 
-[node name="Course2" type="Node"]
+[node name="Course" type="Node"]
 
 [node name="SlopeLow" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1728.89, -1473.77 )
