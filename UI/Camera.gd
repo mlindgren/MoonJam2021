@@ -18,7 +18,7 @@ export var tween_follow_duration := 0.2
 var _zoom_level := 1.5 setget _set_zoom_level
 
 # Camera boundary
-export var boundary_upper_left := Vector2(-1065, -1328)
+export var boundary_upper_left := Vector2(-1065, -2000)
 export var boundary_lower_right := Vector2(848, 469)
 
 onready var tween: Tween = $Tween

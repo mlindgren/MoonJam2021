@@ -31,6 +31,7 @@ position = Vector2( 508.451, -382.254 )
 rotation = 3.14159
 scale = Vector2( 3.80187, -1.94795 )
 z_index = 2
+gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="SlopeHigh2" parent="." instance=ExtResource( 4 )]
@@ -38,6 +39,7 @@ position = Vector2( 511.447, -1022.03 )
 rotation = 3.14159
 scale = Vector2( 3.80187, -1.94795 )
 z_index = 2
+gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="SlopeHigh3" parent="." instance=ExtResource( 4 )]
@@ -45,6 +47,7 @@ position = Vector2( 963.936, -1023.53 )
 rotation = 4.71239
 scale = Vector2( 2.60187, -1.94795 )
 z_index = 2
+gravity_vec = Vector2( 1, 0 )
 gravity = 196.0
 
 [node name="SlopeHigh4" parent="." instance=ExtResource( 4 )]
@@ -64,6 +67,7 @@ position = Vector2( 1597.34, 125.073 )
 rotation = 3.14159
 scale = Vector2( 3.18959, -1.29559 )
 z_index = 2
+gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="SlopeHigh7" parent="." instance=ExtResource( 4 )]
@@ -71,6 +75,7 @@ position = Vector2( 1339.89, -106.95 )
 rotation = 1.5708
 scale = Vector2( 1.78959, -1.29559 )
 z_index = 2
+gravity_vec = Vector2( -1, 0 )
 gravity = 196.0
 
 [node name="SlopeHigh8" parent="." instance=ExtResource( 4 )]
@@ -78,6 +83,7 @@ position = Vector2( 1216.99, 247.971 )
 rotation = 4.71239
 scale = Vector2( 1.78959, -1.29559 )
 z_index = 2
+gravity_vec = Vector2( 1, 0 )
 gravity = 196.0
 
 [node name="GolfBall" parent="." instance=ExtResource( 2 )]

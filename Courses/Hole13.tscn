@@ -19,7 +19,7 @@ gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="SlopeHigh2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1355.92, -640.406 )
+position = Vector2( 1355.92, -642.926 )
 rotation = 3.14159
 scale = Vector2( 1.64187, -3.78795 )
 z_index = 2

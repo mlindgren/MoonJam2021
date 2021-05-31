@@ -25,10 +25,10 @@ gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="SlopeHigh2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 511.447, -1022.03 )
-rotation = 3.14159
+position = Vector2( -249.545, -644.054 )
 scale = Vector2( 3.80187, -1.94795 )
 z_index = 2
+gravity_vec = Vector2( 0, -1 )
 gravity = 196.0
 
 [node name="GolfBall" parent="." instance=ExtResource( 2 )]

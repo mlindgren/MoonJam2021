@@ -10,8 +10,8 @@ onready var _shotPowerLine = $ShotPowerLine
 onready var _sprite = $Sprite
 onready var _tween = $Tween
 
-const MIN_VELOCITY : float = 15.0
-const MAX_CHARGE_VECTOR_LENGTH = 300.0
+const MIN_VELOCITY : float = 30.0
+const MAX_CHARGE_VECTOR_LENGTH = 500.0
 const POWER_SCALING_FACTOR : float = 5.0
 const KILLBOX_COLLISION_LAYER : int = 4
 

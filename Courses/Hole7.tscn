@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Ball/GolfBall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UIScene.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://assets/KenneyTiles.tres" type="TileSet" id=5]
 [ext_resource path="res://UI/CameraScene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://CourseElements/ParallaxScene.tscn" type="PackedScene" id=7]
+[ext_resource path="res://CourseElements/moon2GUMS.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 92.5, -21, -92.5, 21, 34.5992, 153.188, 65.5, -48.5, -65.5, 48.5, -429.401, 150.188, -71.4178, -40.3051, 71.4178, 40.3051, -441.401, 284.188, -66.468, -4.24264, 66.468, 4.24264, 35.5992, 292.188, -28.9914, -17.6777, 28.9914, 17.6777, 251.599, 307.188, 39, -41, -39, 41, 275.599, 898.188, 45, -41, -45, 41, -401.401, 923.188, -43, -47, 43, 47, -418.401, 1066.19, -51, -37, 51, 37, 281.599, 1088.19, 60, -34, -60, 34, 276.599, 1299.19, 41, 57, -41, -57, -588.401, 1302.19, -66, 39, 66, -39, -585.401, 719.188, -41, 11, 41, -11, 116.599, 682.188, 55, 36, -55, -36, 110.599, 522.188, 36, 19, -36, -19, -585.401, 519.188, -55, 26, 55, -26, -574.401, -71.8115, -65.5, -4, 65.5, 4, 11.5992, -97.8115, 78, -26.5, -78, 26.5, 34.5992, 153.188 )
+}
 
 [node name="Course" type="Node"]
 
@@ -59,6 +65,11 @@ tile_data = PoolIntArray( -1179653, 6, 0, -1179652, 10, 0, -1179651, 10, 0, -117
 [node name="PlayerCamera" parent="." instance=ExtResource( 6 )]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
+
+[node name="moon2GUMS" parent="." instance=ExtResource( 8 )]
+position = Vector2( 385.401, -1021.19 )
+curve = SubResource( 1 )
+speed = 500.0
 
 [connection signal="ball_died" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_died"]
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
