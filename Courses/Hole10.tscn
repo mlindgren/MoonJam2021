@@ -13,12 +13,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 55.147, -10.9022, 52.563, 0.890899, -52.563, -0.890899, 7.03845, 68.3878, 48.1085, 1.7818, -48.1085, -1.7818, -599.664, 67.4972, 0, 0, 0, 0, -686.081, -12.6837, -54.3448, 0.890899, 54.3448, -0.890899, -621.045, -83.0647, -44.5449, 4.45449, 44.5449, -4.45449, -1.87054, -81.2829, 0, 0, 0, 0, 55.147, -10.9022 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -88.9761, 6.41724, 52.563, 0.890899, -52.563, -0.890899, -141.732, 77.1323, 48.1085, 1.7818, -48.1085, -1.7818, -599.664, 67.4972, 0, 0, 0, 0, -686.081, -12.6837, -54.3448, 0.890899, 54.3448, -0.890899, -621.045, -83.0647, -44.5449, 4.45449, 44.5449, -4.45449, -133.991, -77.8442, 0, 0, 0, 0, -90.6086, -9.09991, 0, 0, 0, 0, -88.9761, 6.41724 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 55.147, -10.9022, 52.563, 0.890899, -52.563, -0.890899, 40.9729, 177.955, 48.1085, 1.7818, -48.1085, -1.7818, -491.409, 188.319, 0, 0, 0, 0, -519.381, -4.78357, -54.3448, 0.890899, 54.3448, -0.890899, -491.409, -266.681, -44.5449, 4.45449, 44.5449, -4.45449, 40.5913, -260.681, 0, 0, 0, 0, 55.147, -10.9022 )
 }
@@ -109,11 +109,11 @@ curve = SubResource( 1 )
 
 [node name="moon2GUMS3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1660.18, -454.598 )
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
 [node name="moon2GUMS2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1512.41, -1253.32 )
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [connection signal="ball_died" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_died"]
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
