@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/UIScript.gd" type="Script" id=1]
 [ext_resource path="res://UI/HoleFinishedPopup.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://UI/ScoreCount.gd" type="Script" id=5]
 [ext_resource path="res://fonts/droid-sans/DroidSans.tres" type="DynamicFont" id=6]
 [ext_resource path="res://UI/WinnerPopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/HoleCount.gd" type="Script" id=8]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -111,6 +112,6 @@ margin_top = 13.0
 margin_right = 54.0
 margin_bottom = 42.0
 custom_fonts/font = ExtResource( 6 )
-script = ExtResource( 5 )
+script = ExtResource( 8 )
 
 [connection signal="pressed" from="HoleFinishedPopup/NextHoleButton" to="." method="_on_NextHoleButton_pressed"]

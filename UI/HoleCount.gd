@@ -14,4 +14,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Global.currHole < Global.MAX_HOLE:
-		self.text = String(Global.score)
+		self.text = String(Global.currHole)
