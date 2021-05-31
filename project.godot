@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MoonJam2021"
-run/main_scene="res://TitleMenu.tscn"
+run/main_scene="res://UI/TitleMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -37,6 +37,11 @@ Global="*res://Global.gd"
 [debug]
 
 shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.419608 )
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [gdnative]
 
