@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ball/GolfBall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UIScene.tscn" type="PackedScene" id=2]
@@ -6,12 +6,6 @@
 [ext_resource path="res://CourseElements/LinearSlope.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/CameraScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/KenneyTiles.tres" type="TileSet" id=6]
-[ext_resource path="res://CourseElements/moon2GUMS.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -95.9913, -7.66519, 135.344, 6.50955, -135.344, -6.50955, -185.89, 45.1501, 48.1085, -0.465661, -48.1085, 0.465661, -450.716, 42.903, 0, 0, 0, 0, -485.177, 1.69951, -54.3448, 0.890899, 54.3448, -0.890899, -443.973, -18.153, -46.4178, -0.415008, 46.4178, 0.415008, -144.686, -12.9093, 0, 0, 0, 0, -95.6167, -9.1635, 0, 0, 0, 0, -94.8676, -8.78893 )
-}
 
 [node name="Course" type="Node"]
 
@@ -44,9 +38,12 @@ tile_data = PoolIntArray( -524293, 6, 0, -524292, 10, 0, -524291, 10, 0, -524290
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 5 )]
 
-[node name="moon2GUMS" parent="." instance=ExtResource( 7 )]
-position = Vector2( 286.043, -193.095 )
-curve = SubResource( 1 )
+[node name="KillMap" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 6 )
+collision_layer = 4
+format = 1
+tile_data = PoolIntArray( -655356, 33, 0, -655351, 33, 0, -458746, 35, 0, -458745, 35, 0, -262116, 2, 0, 262154, 35, 0, 262155, 35, 0, 262156, 35, 0, 262157, 35, 0, 262158, 35, 0, 262159, 35, 0, 262160, 35, 0, 262161, 35, 0, 262169, 35, 0, 262170, 35, 0, 262171, 35, 0, 262172, 35, 0, 262173, 35, 0 )
 
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
 [connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
