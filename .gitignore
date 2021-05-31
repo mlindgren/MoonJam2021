@@ -6,4 +6,5 @@ bin/
 build/
 lib/
 
-*.zip
+# Original Photoshop documents for art
+psd/

@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="MoonJam2021"
+config/name="moon2GOLF"
 run/main_scene="res://UI/TitleMenu.tscn"
 config/icon="res://icon.png"
 
