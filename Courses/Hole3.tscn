@@ -38,6 +38,13 @@ tile_data = PoolIntArray( -524293, 6, 0, -524292, 10, 0, -524291, 10, 0, -524290
 
 [node name="PlayerCamera" parent="." instance=ExtResource( 5 )]
 
+[node name="KillMap" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 6 )
+collision_layer = 4
+format = 1
+tile_data = PoolIntArray( -262116, 2, 0, 262169, 35, 0, 262170, 35, 0, 262171, 35, 0, 262172, 35, 0, 262173, 35, 0 )
+
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
 [connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
 [connection signal="body_entered" from="GolfHole" to="GolfBall" method="_on_GolfHole_body_entered"]

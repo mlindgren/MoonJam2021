@@ -80,7 +80,7 @@ func _on_GolfBall_input_event(viewport, event, _shape_idx):
 		get_tree().set_input_as_handled()
 
 func _on_GolfBall_body_entered(body):
-	print(body, " ", body.collision_layer)
+	print(body, ": ", body.collision_layer)
 	if body.collision_layer & KILLBOX_COLLISION_LAYER:
 		get_tree().paused = true
 		emit_signal("ball_died")
@@ -113,4 +113,4 @@ func _on_GolfHole_body_entered(body):
 
 
 func _on_GolfBall_ball_died():
-	pass # Replace with function body.
+	print("mb here?")

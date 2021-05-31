@@ -2,7 +2,8 @@ extends Node
 
 enum GAME_MODE {GOD_GAMER, HARDSTUCK_PLAT}
 
-const MAX_HOLE = 10 # needs to be n + 1
+const MAX_HOLE = 15 # needs to be n + 1
+
 var currHole = 1
 var ballInHole = false
 var hitPoints = 3
