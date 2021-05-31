@@ -43,7 +43,7 @@ z_index = 1
 tile_set = ExtResource( 6 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( -655356, 33, 0, -655351, 33, 0, -458746, 35, 0, -458745, 35, 0, -262116, 2, 0, 262154, 35, 0, 262155, 35, 0, 262156, 35, 0, 262157, 35, 0, 262158, 35, 0, 262159, 35, 0, 262160, 35, 0, 262161, 35, 0, 262169, 35, 0, 262170, 35, 0, 262171, 35, 0, 262172, 35, 0, 262173, 35, 0 )
+tile_data = PoolIntArray( -262116, 2, 0, 262169, 35, 0, 262170, 35, 0, 262171, 35, 0, 262172, 35, 0, 262173, 35, 0 )
 
 [connection signal="ball_entered_hole" from="GolfBall" to="UIScene" method="_on_GolfBall_ball_entered_hole"]
 [connection signal="ball_hit" from="GolfBall" to="PlayerCamera" method="_on_GolfBall_ball_hit"]
